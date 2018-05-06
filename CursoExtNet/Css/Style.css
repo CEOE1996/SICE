@@ -1,0 +1,71 @@
+﻿.titulo
+{
+	background-color: white;
+	vertical-align: middle;
+	font-weight:bold;
+	font-family:Tahoma;
+	font-size: 32px;
+	color:#000000;
+}
+.tituloBienvenida
+{
+	padding-left:10px;
+	padding-right:10px;
+	height:20px;
+	border-bottom:solid 0px #000000;		
+	border-top:solid 0px #000000;
+	background-color:#003366;
+	vertical-align:middle;
+	font-family:Tahoma;
+	font-size:12px;
+	font-weight:bold;
+	color: #FFFFFF;	
+}
+.tituloPagina
+{
+	background-color:#e9e9e9;
+	vertical-align: middle;
+	font-weight:bold;
+	font-family:Tahoma;
+	font-size: 12px;
+	color:#003366;
+}
+.Mensaje
+{
+	background-color:#FFFFFF;
+	vertical-align: middle;
+	font-weight:bold;
+	font-family:Tahoma;
+	font-size: 14px;
+	color:#003366;
+}
+.label
+{
+	background-color: white;
+	vertical-align: middle;
+	font-weight:bold;
+	font-family:Tahoma;
+	font-size: 12px;
+	color:#000000;
+}
+.readOnly
+{
+	background-color:#CCCCCC;
+	font-family:Tahoma;
+	font-size: 12px;
+}
+.textBox
+{
+	background-color:White;
+	font-family:Tahoma;
+	font-size: 12px;
+}
+.Center
+{
+	height:90%;
+	width:98%;
+	position:absolute;
+	background:#FFFFFF;
+	opacity:0.6;
+	filter:alpha(opacity=60);
+}
