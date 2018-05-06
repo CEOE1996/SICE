@@ -23,6 +23,33 @@ Partial Public Class WebForm1
     Protected WithEvents gpListado As Global.Ext.Net.GridPanel
 
     '''<summary>
+    '''cboCalendario control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cboCalendario As Global.Ext.Net.ComboBox
+
+    '''<summary>
+    '''stCalendario control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents stCalendario As Global.Ext.Net.Store
+
+    '''<summary>
+    '''mdCalendario control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents mdCalendario As Global.Ext.Net.Model
+
+    '''<summary>
     '''stListado control.
     '''</summary>
     '''<remarks>

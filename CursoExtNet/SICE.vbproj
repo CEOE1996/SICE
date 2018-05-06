@@ -165,6 +165,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\clsCalendario.vb" />
+    <Compile Include="Clases\clsListadoProfesor.vb" />
     <Compile Include="Clases\clsSQL.vb" />
     <Compile Include="Clases\Extensiones.vb" />
     <Compile Include="Clases\VariablesSesion.vb" />
