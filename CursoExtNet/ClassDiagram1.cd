@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CursoExtNet.clsAlumnoSeccion" Collapsed="true">
+    <Position X="4.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAgAAAAAAAgAAAAAAAAAAAQAAAAAAAAAI=</HashCode>
+      <FileName>Clases\clsAlumnoSeccion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CursoExtNet.clsCalendario" Collapsed="true">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgACAAQAAAAAAAAgAAAAAAAAAAIAAAAI=</HashCode>
+      <FileName>Clases\clsCalendario.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CursoExtNet.clsListadoProfesor" Collapsed="true">
+    <Position X="2" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAgAABAAAAAAAAAAQEAAAAAAAAAAAIAAI=</HashCode>
+      <FileName>Clases\clsListadoProfesor.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

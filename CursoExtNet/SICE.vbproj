@@ -150,6 +150,10 @@
     <Content Include="Inicio.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Principal.aspx" />
+    <Content Include="Profesores\Actividades.aspx" />
+    <Content Include="Profesores\Alumnos.aspx" />
+    <Content Include="Profesores\DetalleMateria.aspx" />
+    <Content Include="Profesores\Encuadre.aspx" />
     <Content Include="Profesores\Listado.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
@@ -165,10 +169,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\clsActividadSeccion.vb" />
+    <Compile Include="Clases\clsAlumnoSeccion.vb" />
     <Compile Include="Clases\clsCalendario.vb" />
+    <Compile Include="Clases\clsEncuadre.vb" />
     <Compile Include="Clases\clsListadoProfesor.vb" />
     <Compile Include="Clases\clsSQL.vb" />
     <Compile Include="Clases\Extensiones.vb" />
+    <Compile Include="Clases\utilerias.vb" />
     <Compile Include="Clases\VariablesSesion.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
@@ -221,6 +229,34 @@
       <DependentUpon>Principal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Profesores\Actividades.aspx.designer.vb">
+      <DependentUpon>Actividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesores\Actividades.aspx.vb">
+      <DependentUpon>Actividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profesores\Alumnos.aspx.designer.vb">
+      <DependentUpon>Alumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesores\Alumnos.aspx.vb">
+      <DependentUpon>Alumnos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Profesores\DetalleMateria.aspx.designer.vb">
+      <DependentUpon>DetalleMateria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesores\DetalleMateria.aspx.vb">
+      <DependentUpon>DetalleMateria.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Profesores\Encuadre.aspx.designer.vb">
+      <DependentUpon>Encuadre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesores\Encuadre.aspx.vb">
+      <DependentUpon>Encuadre.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Profesores\Listado.aspx.designer.vb">
       <DependentUpon>Listado.aspx</DependentUpon>
     </Compile>
@@ -248,6 +284,7 @@
     <Content Include="App_Readme\Ext.NET\Sample.Web.config" />
     <Content Include="Master.Master" />
     <Content Include="bin\CursoExtNet.dll.config" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

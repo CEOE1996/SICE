@@ -50,6 +50,15 @@ Partial Public Class WebForm1
     Protected WithEvents mdCalendario As Global.Ext.Net.Model
 
     '''<summary>
+    '''btnEncuadre control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnEncuadre As Global.Ext.Net.Button
+
+    '''<summary>
     '''stListado control.
     '''</summary>
     '''<remarks>

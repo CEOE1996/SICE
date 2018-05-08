@@ -11,7 +11,7 @@
     <div>
         <ext:ResourceManager runat="server" />
         <ext:Window ID="wdwLogIn" runat="server" Modal="true" Title="Iniciar Sesión" TitleAlign="Center" Width="410px" Height="300px" Layout="FitLayout">
-            <Content>
+            <Content>   
                 <ext:FormPanel runat="server" Margin="5" BodyPadding="5" Layout="AnchorLayout" AnchorHorizontal="100%" AnchorVertical="100%" DefaultAnchor="100%">
                     <Items>
                         <ext:Image runat="server" ImageUrl="~/Imagenes/UDG2.png" Margin="5" AnchorHorizontal="100%" AnchorVertical="75%" DefaultAnchor="50%" />
