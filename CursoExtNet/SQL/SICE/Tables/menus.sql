@@ -1,0 +1,21 @@
+USE SICE
+GO
+
+CREATE TABLE [dbo].[menus](
+	[menu] [int] IDENTITY(1,1) NOT NULL,
+	[descripcion] [varchar](30) NOT NULL,
+	[direccion] [varchar](255) NOT NULL,
+	[padre] [int] NULL,
+	[inactivo] [bit] NOT NULL,
+ CONSTRAINT [PK_MENUS] PRIMARY KEY CLUSTERED 
+(
+	[menu] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

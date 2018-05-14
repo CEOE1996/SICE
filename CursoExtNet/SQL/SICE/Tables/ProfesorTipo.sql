@@ -1,0 +1,12 @@
+USE SICE
+GO
+
+CREATE TABLE ProfesorTipo(
+	ID			INT PRIMARY KEY IDENTITY,
+	Profesor	VARCHAR(50) NOT NULL FOREIGN KEY REFERENCES Profesor(Codigo),
+	Tipo		INT NOT NULL FOREIGN KEY REFERENCES TipoUsuario(ID),
+	UNIQUE		(
+					Profesor,
+					Tipo
+				)
+)

@@ -1,0 +1,33 @@
+USE SICE
+GO
+
+CREATE TABLE [dbo].[permisos](
+	[permiso] [int] IDENTITY(1,1) NOT NULL,
+	[tipo] [int] NULL,
+	[menu] [int] NULL,
+	[fecha_alta] [datetime] NOT NULL,
+	[fecha_modificacion] [datetime] NOT NULL,
+	[usuario] [int] NOT NULL,
+ CONSTRAINT [PK_PERMISOS] PRIMARY KEY CLUSTERED 
+(
+	[permiso] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[permisos]  WITH CHECK ADD  CONSTRAINT [FK_PERMISOS_GRUPOS_USUARI] FOREIGN KEY([tipo])
+REFERENCES [dbo].[TipoUsuario] ([ID])
+GO
+
+ALTER TABLE [dbo].[permisos] CHECK CONSTRAINT [FK_PERMISOS_GRUPOS_USUARI]
+GO
+
+ALTER TABLE [dbo].[permisos]  WITH CHECK ADD  CONSTRAINT [FK_PERMISOS_MENUS] FOREIGN KEY([menu])
+REFERENCES [dbo].[menus] ([menu])
+GO
+
+ALTER TABLE [dbo].[permisos] CHECK CONSTRAINT [FK_PERMISOS_MENUS]
+GO
+
+
