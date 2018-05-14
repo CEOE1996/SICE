@@ -36,6 +36,9 @@
                         <ext:Column runat="server" DataIndex="Carrera"          Text="Carrera"      Width="200px" />
                     </Columns>
                 </ColumnModel>
+                <Plugins>
+                    <ext:FilterHeader runat="server" />
+                </Plugins>
             </ext:GridPanel>
         </Content>
     </ext:Viewport>

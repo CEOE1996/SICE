@@ -16,7 +16,7 @@
                     <Items>
                         <ext:Image runat="server" ImageUrl="~/Imagenes/UDG2.png" Margin="5" AnchorHorizontal="100%" AnchorVertical="75%" DefaultAnchor="50%" />
                         <ext:TextField ID="txtUser" runat="server" Flex="1" FieldLabel="Usuario" AnchorHorizontal="100%" Margin="5" />
-                        <ext:TextField ID="txtPass" runat="server" Flex="1" FieldLabel="Contraseña" AnchorHorizontal="100%"  Margin="5"/>
+                        <ext:TextField ID="txtPass" runat="server" Flex="1" FieldLabel="Contraseña" AnchorHorizontal="100%"  Margin="5" InputType="Password"/>
                     </Items>
                 </ext:FormPanel>
             </Content>

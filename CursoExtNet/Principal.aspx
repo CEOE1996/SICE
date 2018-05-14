@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Precios CML</title>
+    <title>SICE</title>
     <link href="Css/Style.css" rel="stylesheet" />
 
     <script type="text/javascript">
@@ -21,7 +21,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <ext:ResourceManager runat="server" />
+        <ext:ResourceManager runat="server" Theme="Default" />
 
         <ext:Viewport runat="server" Layout="BorderLayout">
             <Items>

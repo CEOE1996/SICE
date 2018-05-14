@@ -41,6 +41,15 @@ Partial Public Class Actividades
     Protected WithEvents btnAdd As Global.Ext.Net.Button
 
     '''<summary>
+    '''btAct control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btAct As Global.Ext.Net.Button
+
+    '''<summary>
     '''btnDelete control.
     '''</summary>
     '''<remarks>
@@ -66,4 +75,67 @@ Partial Public Class Actividades
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents mdActividades As Global.Ext.Net.Model
+
+    '''<summary>
+    '''wdwAdd control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents wdwAdd As Global.Ext.Net.Window
+
+    '''<summary>
+    '''cboTipo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cboTipo As Global.Ext.Net.ComboBox
+
+    '''<summary>
+    '''stTipo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents stTipo As Global.Ext.Net.Store
+
+    '''<summary>
+    '''mdTipo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents mdTipo As Global.Ext.Net.Model
+
+    '''<summary>
+    '''txtDescripcion control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDescripcion As Global.Ext.Net.TextArea
+
+    '''<summary>
+    '''btnAgregar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAgregar As Global.Ext.Net.Button
+
+    '''<summary>
+    '''btnCancel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCancel As Global.Ext.Net.Button
 End Class

@@ -66,4 +66,67 @@ Partial Public Class Encuadre
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents mdEncuadre As Global.Ext.Net.Model
+
+    '''<summary>
+    '''wdwAdd control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents wdwAdd As Global.Ext.Net.Window
+
+    '''<summary>
+    '''cboTipo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cboTipo As Global.Ext.Net.ComboBox
+
+    '''<summary>
+    '''stTipo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents stTipo As Global.Ext.Net.Store
+
+    '''<summary>
+    '''mdTipo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents mdTipo As Global.Ext.Net.Model
+
+    '''<summary>
+    '''txtPorcentaje control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtPorcentaje As Global.Ext.Net.NumberField
+
+    '''<summary>
+    '''btnAgregar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAgregar As Global.Ext.Net.Button
+
+    '''<summary>
+    '''btnCancel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCancel As Global.Ext.Net.Button
 End Class
