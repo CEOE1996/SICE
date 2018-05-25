@@ -5,6 +5,7 @@
         If Not IsPostBack Then
             hdID.Value = Request.QueryString("ID")
             stActividades.Reload()
+            stTipo.Reload()
         End If
     End Sub
 
@@ -16,6 +17,25 @@
     Private Sub stTipo_ReadData(sender As Object, e As Ext.Net.StoreReadDataEventArgs) Handles stTipo.ReadData
         stTipo.DataSource = clsTipoCalificacion.ListSeccion(hdID.Value)
         stTipo.DataBind()
+    End Sub
+
+    Public Sub FillEvaluar(CalificacionID As Integer)
+        Dim EvaluarList = From A In clsAlumnoSeccion.List(hdID.Value)
+                          Group Join E In clsAlumnoCalificacion.ListByCalificacionID(CalificacionID)
+                            On A.ID Equals E.AlumnoSeccion Into eGroup = Group
+                            From E In eGroup.DefaultIfEmpty()
+                            Select New clsEvaluarAct With {
+                                .ID = If(E Is Nothing, -1, E.ID),
+                                .AlumnoSeccion = A.ID,
+                                .Codigo = A.Codigo,
+                                .Nombre = A.Nombre,
+                                .Calificacion = If(E Is Nothing, "Sin Entregar", E.Calificacion),
+                                .CalificacionID = CalificacionID,
+                                .FechaEntrega = If(E Is Nothing, Nothing, E.FechaEntrega)
+                            }
+
+        stEvaluar.DataSource = EvaluarList
+        stEvaluar.DataBind()
     End Sub
 
     <Ext.Net.DirectMethod()>
@@ -63,6 +83,47 @@
         Catch ex As Exception
             Ext.Net.X.Msg.Alert("Error", ex.Message).Show()
         End Try
+    End Sub
+
+    Public Sub btnAct_Click(sender As Object, e As Ext.Net.DirectEventArgs)
+        txtDescripcionAl.Text = e.ExtraParams("Descripcion")
+        FillEvaluar(e.ExtraParams("ID"))
+        wdwCalificar.Show()
+    End Sub
+
+    <Ext.Net.DirectMethod()>
+    Public Sub Edit(Alumno As Integer, NewVal As String)
+        If Not IsNumeric(NewVal) Then
+            Ext.Net.X.Msg.Alert("Error", "Favor de Introducir un Valor").Show()
+            gpEvaluar.GetStore().GetById(Alumno).Reject()
+            Return
+        End If
+
+        If CDec(NewVal) < 0 OrElse CDec(NewVal) >= 100 Then
+            Ext.Net.X.Msg.Alert("Error", "Favor de Introducir un Valor Entre 0 y 100").Show()
+            gpEvaluar.GetStore().GetById(Alumno).Reject()
+            Return
+        End If
+    End Sub
+
+    Public Sub btnGuardar_Click(sender As Object, e As Ext.Net.DirectEventArgs)
+        Try
+            Dim Evaluar As Ext.Net.ChangeRecords(Of clsEvaluarAct) = New Ext.Net.StoreDataHandler(e.ExtraParams("Calificacion")).BatchObjectData(Of clsEvaluarAct)()
+            Dim Res As String
+            For Each i In Evaluar.Updated
+                Res = clsAlumnoCalificacion.InsertUpdate(i.ID, i.AlumnoSeccion, i.CalificacionID, i.Calificacion)
+                If Res <> "" Then
+                    Ext.Net.X.Msg.Alert("Error", "Error al Actualizar Alumno " & i.Nombre & "<BR/>" & Res).Show()
+                    Return
+                End If
+            Next
+
+            Ext.Net.X.Msg.Notify("Guardar", "Se han guardado Calificaciones Satisfactoriamente").Show()
+            wdwCalificar.Close()
+        Catch ex As Exception
+            Ext.Net.X.Msg.Alert("Error", ex.Message)
+        End Try
+
     End Sub
 
 End Class

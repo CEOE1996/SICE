@@ -16,9 +16,9 @@
         Return clsSQL.ExecScalar("SPI_EncuadreSeccion", CommandType.StoredProcedure, "ConnectionStringCentro")
     End Function
 
-    Public Shared Sub Delete(ID As Integer)
+    Public Shared Function Delete(ID As Integer) As String
         clsSQL.AddParameter("@ID", ID)
-        clsSQL.ExecNonQuery("SPD_EncuadreSeccion", CommandType.StoredProcedure, "ConnectionStringCentro")
-    End Sub
+        Return clsSQL.ExecScalar("SPD_EncuadreSeccion", CommandType.StoredProcedure, "ConnectionStringCentro")
+    End Function
 
 End Class

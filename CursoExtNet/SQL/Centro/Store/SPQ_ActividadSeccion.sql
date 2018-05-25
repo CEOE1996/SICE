@@ -5,7 +5,7 @@
 *	Modified Date: 
 *	
 *	Description: Listado de Actividades por Sección
-*	Example: EXEC SPQ_ActividadSeccion
+*	Example: EXEC SPQ_ActividadSeccion 10
 */
 
 CREATE PROCEDURE SPQ_ActividadSeccion

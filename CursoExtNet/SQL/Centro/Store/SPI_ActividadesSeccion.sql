@@ -33,12 +33,14 @@ BEGIN TRY
 	INSERT INTO Calificacion(
 		Seccion,
 		Tipo,
-		Descripcion
+		Descripcion,
+		FechaAlta
 	)
 	SELECT
 		Seccion = @Seccion,
 		Tipo = @Tipo,
-		Descripcion = @Descripcion
+		Descripcion = @Descripcion,
+		FechaAlta = GETDATE()
 
 	COMMIT
 

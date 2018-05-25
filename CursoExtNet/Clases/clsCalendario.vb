@@ -12,4 +12,9 @@
         Return clsSQL.List("SPQ_CalendarioActual", CommandType.StoredProcedure, "ConnectionString").toList(Of clsCalendario)().FirstOrDefault
     End Function
 
+    Public Shared Function IsActive(ID As Integer) As Boolean
+        clsSQL.AddParameter("@ID", ID)
+        Return clsSQL.ExecScalar("SPQ_CalendarioActivo", CommandType.StoredProcedure, "ConnectionString")
+    End Function
+
 End Class

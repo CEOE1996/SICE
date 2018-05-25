@@ -8,6 +8,6 @@
 
     Public Shared Function ListSeccion(Seccion As Integer) As List(Of clsTipoCalificacion)
         clsSQL.AddParameter("@Seccion", Seccion)
-        Return clsSQL.List("SPQ_TipoSeccion", CommandType.StoredProcedure, "ConnectionStringCentro").toList(Of clsTipoCalificacion)()
+        Return clsSQL.List("SPQ_TipoCalificacionSeccion", CommandType.StoredProcedure, "ConnectionStringCentro").toList(Of clsTipoCalificacion)()
     End Function
 End Class

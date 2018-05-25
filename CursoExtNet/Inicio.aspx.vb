@@ -2,7 +2,9 @@
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        
+        If Not IsPostBack Then
+            clsSQL.List("SELECT * FROM Alumno", CommandType.Text, "ConnectionString")
+        End If
     End Sub
 
     Public Function ValidaUsuario() As Boolean

@@ -64,8 +64,9 @@
     <Reference Include="Ext.Net">
       <HintPath>..\packages\Ext.NET.2.5.3.1\lib\net40\Ext.Net.dll</HintPath>
     </Reference>
-    <Reference Include="Ext.Net.Utilities">
-      <HintPath>..\packages\Ext.NET.Utilities.2.5.0\lib\Ext.Net.Utilities.dll</HintPath>
+    <Reference Include="Ext.Net.Utilities, Version=2.5.0.0, Culture=neutral, PublicKeyToken=2c34ac34702a3c23, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Ext.Net.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -120,6 +121,10 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Alumnos\ActividadesMateria.aspx" />
+    <Content Include="Alumnos\Asistencias.aspx" />
+    <Content Include="Alumnos\Detalle.aspx" />
+    <Content Include="Alumnos\ListadoAlumno.aspx" />
     <Content Include="App_Readme\Ext.NET.Utilities\BREAKING_CHANGES.txt" />
     <Content Include="App_Readme\Ext.NET.Utilities\LICENSE.txt" />
     <Content Include="App_Readme\Ext.NET.Utilities\README.txt" />
@@ -143,11 +148,16 @@
     <Content Include="bin\Transformer.NET.dll" />
     <Content Include="bin\Transformer.NET.xml" />
     <Content Include="bin\WebActivatorEx.dll" />
+    <Content Include="Coordinador\AjusteHorario.aspx" />
+    <Content Include="Coordinador\ConsultaSeccion.aspx" />
+    <Content Include="Coordinador\DetalleSeccion.aspx" />
     <Content Include="Css\Style.css" />
     <Content Include="Dlls\AutoMapper.dll" />
     <Content Include="Ext.NET.Default.aspx" />
     <Content Include="Imagenes\logo.jpg" />
     <Content Include="Inicio.aspx" />
+    <Content Include="Jefe\ModificarSeccion.aspx" />
+    <Content Include="Jefe\ListadoProfesor.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Profesores\Actividades.aspx" />
@@ -171,16 +181,72 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alumnos\ActividadesMateria.aspx.designer.vb">
+      <DependentUpon>ActividadesMateria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\ActividadesMateria.aspx.vb">
+      <DependentUpon>ActividadesMateria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alumnos\Asistencias.aspx.designer.vb">
+      <DependentUpon>Asistencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\Asistencias.aspx.vb">
+      <DependentUpon>Asistencias.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Alumnos\Detalle.aspx.designer.vb">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\Detalle.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\ListadoAlumno.aspx.designer.vb">
+      <DependentUpon>ListadoAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\ListadoAlumno.aspx.vb">
+      <DependentUpon>ListadoAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Clases\clsActividadSeccion.vb" />
+    <Compile Include="Clases\clsAlumnoCalificacion.vb" />
+    <Compile Include="Clases\clsAlumnoCarrera.vb" />
+    <Compile Include="Clases\clsAlumnoClase.vb" />
     <Compile Include="Clases\clsAlumnoSeccion.vb" />
     <Compile Include="Clases\clsCalendario.vb" />
     <Compile Include="Clases\clsEncuadre.vb" />
-    <Compile Include="Clases\clsListadoProfesor.vb" />
+    <Compile Include="Clases\clsEvaluarAct.vb" />
+    <Compile Include="Clases\clsMySQL.vb" />
+    <Compile Include="Clases\clsProfesor.vb" />
+    <Compile Include="Clases\clsSeccion.vb" />
     <Compile Include="Clases\clsSQL.vb" />
+    <Compile Include="Clases\clsTipoAsistencia.vb" />
     <Compile Include="Clases\clsTipoCalificacion.vb" />
     <Compile Include="Clases\Extensiones.vb" />
     <Compile Include="Clases\utileria.vb" />
     <Compile Include="Clases\VariablesSesion.vb" />
+    <Compile Include="Coordinador\AjusteHorario.aspx.designer.vb">
+      <DependentUpon>AjusteHorario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Coordinador\AjusteHorario.aspx.vb">
+      <DependentUpon>AjusteHorario.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Coordinador\ConsultaSeccion.aspx.designer.vb">
+      <DependentUpon>ConsultaSeccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Coordinador\ConsultaSeccion.aspx.vb">
+      <DependentUpon>ConsultaSeccion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Coordinador\DetalleSeccion.aspx.designer.vb">
+      <DependentUpon>DetalleSeccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Coordinador\DetalleSeccion.aspx.vb">
+      <DependentUpon>DetalleSeccion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -189,6 +255,20 @@
     </Compile>
     <Compile Include="Inicio.aspx.vb">
       <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Jefe\ModificarSeccion.aspx.designer.vb">
+      <DependentUpon>ModificarSeccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Jefe\ModificarSeccion.aspx.vb">
+      <DependentUpon>ModificarSeccion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Jefe\ListadoProfesor.aspx.designer.vb">
+      <DependentUpon>ListadoProfesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Jefe\ListadoProfesor.aspx.vb">
+      <DependentUpon>ListadoProfesor.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="login.aspx.designer.vb">
@@ -292,6 +372,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\PublishProfiles\Carlos.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -301,10 +382,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Alumnos\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Coordinador\" />
-    <Folder Include="Jefe\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -20,6 +20,20 @@
         Ext.net.DirectEvent.timeout = 600000;
     </script>
 
+    <style type="text/css">
+        .x-form-readonly input.x-form-field
+        {
+            color: Gray;
+            opacity: 0.5;
+        }
+        
+        .readonly-class input, .readonly-class textarea {
+            color: Gray;
+            opacity: 0.5;
+        }
+        
+    </style>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

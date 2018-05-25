@@ -4,6 +4,10 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             hdID.Value = CInt(Request.QueryString("ID"))
+            If Request.QueryString("Editar") = 0 Then
+                btnAdd.Hidden = True
+                btnDelete.Hidden = True
+            End If
             stEncuadre.Reload()
             stTipo.Reload()
         End If
@@ -34,7 +38,8 @@
                 Return
             End If
 
-            If 100 > txtPorcentaje.Value >= 0 Then
+            If txtPorcentaje.Value > 100 OrElse
+                txtPorcentaje.Value <= 0 Then
                 Ext.Net.X.Msg.Alert("Error", "Porcentaje Inválido").Show()
                 Return
             End If
@@ -56,7 +61,12 @@
 
     Public Sub btnDelete_Click(sender As Object, e As Ext.Net.DirectEventArgs)
         Try
-            clsEncuadre.Delete(e.ExtraParams("ID"))
+            Dim r As String = clsEncuadre.Delete(e.ExtraParams("ID"))
+
+            If r <> "" Then
+                Ext.Net.X.Msg.Notify("Error", r).Show()
+                Return
+            End If
 
             stEncuadre.Reload()
             Ext.Net.X.Msg.Notify("Eliminar", "Se ha Eliminado Actividad Satisfactoriamente").Show()

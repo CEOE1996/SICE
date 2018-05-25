@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Master.Master" CodeBehind="DetalleMateria.aspx.vb" Inherits="CursoExtNet.DetalleMateria" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Master.Master" CodeBehind="Detalle.aspx.vb" Inherits="CursoExtNet.Detalle" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .x-form-readonly input.x-form-field
@@ -31,17 +31,17 @@
                 </TopBar>
                 <Items>
                     <ext:Panel ID="pnlAlumnos" runat="server" Title="Alumnos" Layout="FitLayout">
-                        <Loader runat="server" AutoLoad="true" Mode="Frame" Scripts="true" DisableCaching="true" Url="Alumnos.aspx?Coordi=0&ID=">
+                        <Loader runat="server" AutoLoad="true" Mode="Frame" Scripts="true" DisableCaching="true" Url="Asistencias.aspx?ID=">
                             <LoadMask ShowMask="true" Msg="Cargando..." />
                         </Loader>
                     </ext:Panel>
                     <ext:Panel ID="pnlActividades" runat="server" Title="Actividades" Layout="FitLayout">
-                        <Loader runat="server" AutoLoad="true" Mode="Frame" Scripts="true" DisableCaching="true" Url="Actividades.aspx?ID=">
+                        <Loader runat="server" AutoLoad="true" Mode="Frame" Scripts="true" DisableCaching="true" Url="ActividadesMateria.aspx?ID=">
                             <LoadMask ShowMask="true" Msg="Cargando..." />
                         </Loader>
                     </ext:Panel>
                     <ext:Panel ID="pnlEncuadre" runat="server" Title="Encuadre" Layout="FitLayout">
-                        <Loader runat="server" AutoLoad="true" Mode="Frame" Scripts="true" DisableCaching="true" Url="Encuadre.aspx?Editar=1&ID=">
+                        <Loader runat="server" AutoLoad="true" Mode="Frame" Scripts="true" DisableCaching="true" Url="../Profesores/Encuadre.aspx?Editar=0&ID=">
                             <LoadMask ShowMask="true" Msg="Cargando..." />
                         </Loader>
                     </ext:Panel>

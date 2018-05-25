@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Master.Master" CodeBehind="Listado.aspx.vb" Inherits="CursoExtNet.WebForm1" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Master.Master" CodeBehind="ConsultaSeccion.aspx.vb" Inherits="CursoExtNet.ConsultaSeccion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     <ext:Viewport runat="server" Layout="FitLayout">
-        <Content>
-            <ext:GridPanel ID="gpListado" runat="server" Layout="FitLayout" Title="Listado de Materias" TitleAlign="Center" Scroll="Both" >
+        <Items>
+            <ext:GridPanel ID="gpSeccion" runat="server" Title="Consulta Secciones" TitleAlign="Center" Layout="FitLayout" Scroll="Both">
                 <TopBar>
                     <ext:Toolbar runat="server">
                         <Items>
@@ -31,28 +31,29 @@
                                     <Click OnEvent="btnEncuadre_Click">
                                         <EventMask ShowMask="true" />
                                         <ExtraParams>
-                                            <ext:Parameter Name="ID"      Value="#{gpListado}.selModel.selected.items[0].data.ID"       Mode="Raw" />
-                                            <ext:Parameter Name="NRC"     Value="#{gpListado}.selModel.selected.items[0].data.NRC"      Mode="Raw" />
-                                            <ext:Parameter Name="Seccion" Value="#{gpListado}.selModel.selected.items[0].data.Seccion"  Mode="Raw" />
-                                            <ext:Parameter Name="Materia" Value="#{gpListado}.selModel.selected.items[0].data.Materia"  Mode="Raw" />
+                                            <ext:Parameter Name="ID"      Value="#{gpSeccion}.selModel.selected.items[0].data.ID"       Mode="Raw" />
+                                            <ext:Parameter Name="NRC"     Value="#{gpSeccion}.selModel.selected.items[0].data.NRC"      Mode="Raw" />
+                                            <ext:Parameter Name="Seccion" Value="#{gpSeccion}.selModel.selected.items[0].data.Seccion"  Mode="Raw" />
+                                            <ext:Parameter Name="Materia" Value="#{gpSeccion}.selModel.selected.items[0].data.Materia"  Mode="Raw" />
                                         </ExtraParams>
                                     </Click>
                                 </DirectEvents>
                                 <Listeners>
-                                    <Click Handler="return #{gpListado}.hasSelection();" />
+                                    <Click Handler="return #{gpSeccion}.hasSelection();" />
                                 </Listeners>
                             </ext:Button> 
-                        </Items>
+                        </Items>    
                     </ext:Toolbar>
                 </TopBar>
                 <Store>
-                    <ext:Store ID="stListado" runat="server">
+                    <ext:Store ID="stSeccion" runat="server" GroupField="Materia">
                         <Model>
-                            <ext:Model ID="mdListado" runat="server">
+                            <ext:Model ID="mdSeccion" runat="server">
                                 <Fields>
                                     <ext:ModelField Name="ID" />
                                     <ext:ModelField Name="NRC" />
                                     <ext:ModelField Name="Seccion" />
+                                    <ext:ModelField Name="Profesor" />
                                     <ext:ModelField Name="ClaveMateria" />
                                     <ext:ModelField Name="Materia" />
                                     <ext:ModelField Name="Aula" />
@@ -64,17 +65,24 @@
                 <ColumnModel>
                     <Columns>
                         <ext:Column runat="server" DataIndex="ID"           Text="ID"       Visible="false" />
-                        <ext:Column runat="server" DataIndex="NRC"          Text="NRC"      Width="100px" />
-                        <ext:Column runat="server" DataIndex="Seccion"      Text="Sección"  Width="100px" />
-                        <ext:Column runat="server" DataIndex="ClaveMateria" Text="Clave"    Width="100px" />
+                        <ext:Column runat="server" DataIndex="NRC"          Text="NRC"      Width="75px" />
+                        <ext:Column runat="server" DataIndex="Seccion"      Text="Sección"  Width="75px" />
+                        <ext:Column runat="server" DataIndex="Profesor"     Text="Profesor" Flex="1" />
+                        <ext:Column runat="server" DataIndex="ClaveMateria" Text="Clave"    Width="75px" />
                         <ext:Column runat="server" DataIndex="Materia"      Text="Materia"  Flex="1" />
-                        <ext:Column runat="server" DataIndex="Aula"         Text="Aula"     Width="150px" />
+                        <ext:Column runat="server" DataIndex="Aula"         Text="Aula"     Width="100px" />
                     </Columns>
                 </ColumnModel>
                 <Plugins>
                     <ext:FilterHeader runat="server" />
                 </Plugins>
+                <View>
+                    <ext:GridView runat="server" StripeRows="true" MarkDirty="false" />
+                </View>
+                <Features>
+                    <ext:Grouping ID="Grouping1" runat="server" StartCollapsed="true" ShowGroupsText="" />
+                </Features> 
             </ext:GridPanel>
-        </Content>
+        </Items>
     </ext:Viewport>
 </asp:Content>
